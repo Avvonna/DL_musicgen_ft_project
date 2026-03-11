@@ -17,8 +17,8 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL = "arcee-ai/trinity-large-preview:free"
 TEMPERATURE = 0.3
 
-DATA_DIR = "dataset/raw"
-PROCESSED_DIR = "dataset/enriched"
+DATA_DIR = "dataset"
+PROCESSED_DIR = "dataset"
 os.makedirs(PROCESSED_DIR, exist_ok=True)
 
 

@@ -9,7 +9,7 @@ from tqdm import tqdm
 from yt_dlp.utils import DownloadError
 
 # Настройки
-DATA_DIR = "dataset/raw"
+DATA_DIR = "dataset"
 MAX_SAMPLES = 1_000
 os.makedirs(DATA_DIR, exist_ok=True)
 
