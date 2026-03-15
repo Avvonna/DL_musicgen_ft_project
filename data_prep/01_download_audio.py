@@ -8,10 +8,7 @@ from datasets import load_dataset
 from tqdm import tqdm
 from yt_dlp.utils import DownloadError
 
-# Настройки
-DATA_DIR = "dataset"
-MAX_SAMPLES = 1_000
-os.makedirs(DATA_DIR, exist_ok=True)
+from utils.dir_utils import META_DIR, RAW_DATA_DIR
 
 # Загрузка датасета
 ds = load_dataset("google/MusicCaps", split="train")
@@ -24,9 +21,11 @@ ydl_opts = {
     'extract_flat': False,
     'sleep_interval': 5,
     'max_sleep_interval': 15,
-    'sleep_interval_requests': 1,
+    'sleep_interval_requests': 5,
+    # "cookies": "cookies.txt"
 }
 
+MAX_SAMPLES = len(ds)
 success_count = 0
 
 with yt_dlp.YoutubeDL(ydl_opts) as ydl: # type: ignore
@@ -43,8 +42,8 @@ with yt_dlp.YoutubeDL(ydl_opts) as ydl: # type: ignore
         end_s = row['end_s']
         duration = end_s - start_s
 
-        wav_path = os.path.join(DATA_DIR, f"{ytid}.wav")
-        json_path = os.path.join(DATA_DIR, f"{ytid}_meta.json")
+        wav_path = os.path.join(RAW_DATA_DIR, f"{ytid}.wav")
+        json_path = os.path.join(META_DIR, f"{ytid}.json")
 
         # Пропускаем, если уже скачали
         if os.path.exists(wav_path) and os.path.exists(json_path):

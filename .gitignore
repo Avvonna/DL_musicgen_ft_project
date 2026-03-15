@@ -1,4 +1,6 @@
 dataset/
+manifests/
+cookies.txt
 uv.lock
 .vscode
 

@@ -1,0 +1,9 @@
+# @package __global__
+
+datasource:
+  max_sample_rate: 32000
+  max_channels: 1
+  train: "E:/Study/DL_musicgen_ft_project/manifests/train.jsonl.gz"
+  valid: "E:/Study/DL_musicgen_ft_project/manifests/valid.jsonl.gz"
+  evaluate: "E:/Study/DL_musicgen_ft_project/manifests/valid.jsonl.gz"
+  generate: "E:/Study/DL_musicgen_ft_project/manifests/valid.jsonl.gz"
