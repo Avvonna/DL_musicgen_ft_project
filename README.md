@@ -389,7 +389,7 @@ python finetune.py
 ### 4B. Либо скачать веса до-обученной модели
 
 ```bash
-python scripts/download_weights.py --file_id ...
+python scripts/download_weights.py --file_id "1-_wpl5My9pjTzh_ENPv7lWOasD7BvVW4"
 ```
 
 ### 5. Сгенерировать тестовые примеры
@@ -416,7 +416,7 @@ python inference.py \
 - `BASE_prompt_N.wav` - генерация базовой модели
 - `prompt_N.wav` - генерация fine-tuned модели
 
-Веса доступны по [**ссылке**](...). Для скачивания можно использовать скрипт [`download_weights.py`](./scripts/download_weights.py)
+Веса доступны по [**ссылке**](https://drive.google.com/file/d/1-_wpl5My9pjTzh_ENPv7lWOasD7BvVW4/view?usp=sharing). Для скачивания можно использовать скрипт [`download_weights.py`](./scripts/download_weights.py)
 
 Отчет можно посмотреть тут: [**WANDB REPORT**](https://wandb.ai/vaalkaev-hse/musicgen-hw4/reports/Untitled-Report--VmlldzoxNjIyNDY3MQ)
 
